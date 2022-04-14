@@ -1,0 +1,17 @@
+{
+  "name": "fpts-boxed-comparison",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "build": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@swan-io/boxed": "^0.3.6",
+    "fp-ts": "^2.11.10"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.24",
+    "typescript": "^4.6.3"
+  }
+}
