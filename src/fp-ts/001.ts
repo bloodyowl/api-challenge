@@ -1,5 +1,6 @@
 import assert from "assert";
-import { taskEither } from "fp-ts";
+import { either, option, taskEither } from "fp-ts";
+import { pipe } from "fp-ts/lib/function";
 import { TaskEither } from "fp-ts/lib/TaskEither";
 import { getUserById } from "./utils";
 
@@ -16,13 +17,10 @@ export const getUserName = (userId: string): TaskEither<error, string> => {
 };
 
 const test = async () => {
-  assert.deepEqual(await getUserName("1")(), taskEither.left("NoName"));
-  assert.deepEqual(await getUserName("2")(), taskEither.left("NoName"));
-  assert.deepEqual(
-    await getUserName("3")(),
-    taskEither.right("Mathieu Breton")
-  );
-  assert.deepEqual(await getUserName("4")(), taskEither.right("UserNotFound"));
+  assert.deepEqual(await getUserName("1")(), either.left("NoName"));
+  assert.deepEqual(await getUserName("2")(), either.left("NoName"));
+  assert.deepEqual(await getUserName("3")(), either.right("Mathieu Breton"));
+  assert.deepEqual(await getUserName("4")(), either.left("UserNotFound"));
 };
 
 test();
