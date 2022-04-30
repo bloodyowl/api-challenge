@@ -21,6 +21,7 @@ const test = async () => {
   assert.deepEqual(await getUserName("2")(), either.left("NoName"));
   assert.deepEqual(await getUserName("3")(), either.right("Mathieu Breton"));
   assert.deepEqual(await getUserName("4")(), either.left("UserNotFound"));
+  console.log("All passed");
 };
 
 test();
