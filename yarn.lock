@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@swan-io/boxed@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@swan-io/boxed/-/boxed-0.7.0.tgz#a0fb24ef2cf7d3cc73abac691391588d78e22595"
-  integrity sha512-e+fsUQygpECrJBBl6Pm/HS9i9uPpHFMqCYI+tpr9ZepjjY0tqJNIt5Aub3lXbBYUuiMVD6kSFjQSTAVy65k8og==
+"@swan-io/boxed@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@swan-io/boxed/-/boxed-0.8.0.tgz#d20effd934a3debdb9506881bac6333ae5bd857a"
+  integrity sha512-Z8ZFJ7p5A37JTjbL6OMvUTmxbxb7ztXbDB4L0MPf0sz0xfD1peGiIFkGf4oSiylSCxXvzFmOyoPCdOPbF6Zr2Q==
 
 "@types/node@^17.0.24":
   version "17.0.24"

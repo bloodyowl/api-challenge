@@ -7,7 +7,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@swan-io/boxed": "^0.7.0",
+    "@swan-io/boxed": "^0.8.0",
     "fp-ts": "^2.11.10"
   },
   "devDependencies": {
