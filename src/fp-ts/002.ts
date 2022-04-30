@@ -1,5 +1,6 @@
 import assert from "assert";
-import { either } from "fp-ts";
+import { either, readonlyArray, taskEither } from "fp-ts";
+import { pipe } from "fp-ts/lib/function";
 import { map, TaskEither } from "fp-ts/lib/TaskEither";
 import { getUserById, User } from "./utils";
 
@@ -12,7 +13,11 @@ export const getUsers = (
   userIds: Array<string>
 ): TaskEither<"UserNotFound", Array<User>> => {
   const users = userIds.map(getUserById);
-  // Your code here
+  return pipe(
+    users,
+    taskEither.sequenceArray,
+    taskEither.map(readonlyArray.toArray)
+  );
 };
 
 const test = async () => {

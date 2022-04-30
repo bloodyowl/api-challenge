@@ -13,7 +13,16 @@ import { getUserById } from "./utils";
 type error = "NoName" | "UserNotFound";
 
 export const getUserName = (userId: string): TaskEither<error, string> => {
-  // Your code here
+  return pipe(
+    getUserById(userId),
+    taskEither.chainW((user) =>
+      pipe(
+        user.info,
+        option.chain((info) => info.name),
+        taskEither.fromOption(() => "NoName" as const)
+      )
+    )
+  );
 };
 
 const test = async () => {

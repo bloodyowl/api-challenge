@@ -11,7 +11,7 @@ export const getUsers = (
   userIds: Array<string>
 ): Future<Result<Array<User>, "UserNotFound">> => {
   const users = userIds.map(getUserById);
-  // Your code here
+  return Future.all(users).map(Result.all);
 };
 
 const test = async () => {

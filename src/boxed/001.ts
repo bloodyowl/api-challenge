@@ -11,7 +11,9 @@ import { getUserById } from "./utils";
 type error = "NoName" | "UserNotFound";
 
 export const getUserName = (userId: string): Future<Result<string, error>> => {
-  // Your code here
+  return getUserById(userId).mapResult((user) =>
+    user.info.flatMap((info) => info.name).toResult("NoName")
+  );
 };
 
 const test = async () => {
